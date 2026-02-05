@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - Intern Gate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-50 flex min-h-screen">
+    <aside class="w-64 bg-indigo-900 text-white fixed h-full p-6 shadow-xl">
+        <h1 class="text-2xl font-black mb-10 italic">INTERN-GATE</h1>
+        <nav class="space-y-4">
+            <a href="/public/admin/dashboard.html" class="block p-3 bg-indigo-800 rounded-lg">📊 Dashboard</a>
+            <a href="/public/admin/peserta.html" class="block p-3 hover:bg-indigo-800 transition rounded-lg">👥 Data Peserta</a>
+        </nav>
+    </aside>
+
+    <main class="ml-64 flex-1 p-8">
+        <header class="mb-10">
+            <h2 class="text-3xl font-extrabold text-slate-800">Executive Analytics</h2>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border">
+                <p class="text-gray-400 text-xs font-bold uppercase">Total Database</p>
+                <h3 id="statTotal" class="text-4xl font-black text-slate-800">0</h3>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-indigo-500">
+                <p class="text-gray-400 text-xs font-bold uppercase text-indigo-500">Aktif Magang</p>
+                <h3 id="statAktif" class="text-4xl font-black text-indigo-600">0</h3>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-emerald-500">
+                <p class="text-gray-400 text-xs font-bold uppercase text-emerald-500">Total Alumni</p>
+                <h3 id="statAlumni" class="text-4xl font-black text-emerald-600">0</h3>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-orange-500">
+                <p class="text-gray-400 text-xs font-bold uppercase text-orange-500">Pending</p>
+                <h3 id="statPending" class="text-4xl font-black text-orange-600">0</h3>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border">
+                <h4 class="font-bold text-slate-700 mb-4">Sebaran Jurusan</h4>
+                <div class="h-[300px] flex justify-center">
+                    <canvas id="jurusanChart"></canvas>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border">
+                <h4 class="font-bold text-slate-700 mb-4">Trend Magang Bulanan</h4>
+                <div class="h-[300px]">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/src/js/dashboard.js"></script>
+</body>
+</html>
